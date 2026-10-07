@@ -1,1587 +1,1470 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width,initial-scale=1" name="viewport"/>
-  <meta content="#0e3f43" name="theme-color"/>
-  <title>
-   Batanes — Where the Wind Leads
-  </title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css" rel="stylesheet"/>
-  <link href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com" rel="preconnect"/>
-  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;family=Playfair+Display:ital,wght@0,600;1,600&amp;display=swap" rel="stylesheet"/>
-  <link href="styles.css" rel="stylesheet"/>
- </head>
- <body>
-  <div id="appShell">
-   <header class="site-header" id="siteHeader">
-    <button aria-label="Go to home" class="brand" data-view="home">
-     <span class="brand-seal">
-      B
-     </span>
-     <span class="brand-copy">
-      <b>
-       BATANES
-      </b>
-      <small>
-       Philippines
-      </small>
-     </span>
-    </button>
-    <nav aria-label="Primary navigation" class="desktop-nav">
-     <button class="active" data-view="home">
-      Home
-     </button>
-     <button data-view="discover">
-      Discover
-     </button>
-     <button data-view="experiences">
-      Experiences
-     </button>
-     <button data-view="guide">
-      Travel Guide
-     </button>
-     <button data-view="plan">
-      Plan
-     </button>
-     <button data-view="gallery">
-      Gallery
-     </button>
-    </nav>
-    <div class="header-actions">
-     <button class="itinerary-button" data-view="itinerary">
-      <i class="bi bi-bookmark">
-      </i>
-      <span>
-       My trip
-      </span>
-      <b id="savedCount">
-       0
-      </b>
-     </button>
-     <button aria-label="Open menu" class="menu-button" id="menuBtn">
-      <i class="bi bi-list">
-      </i>
-     </button>
-    </div>
-   </header>
-   <main id="views">
-    <!-- HOME -->
-    <section aria-label="Home" class="view active home-view" data-page="home">
-     <div class="home-stage">
-      <div class="hero-bg" id="heroBg">
-      </div>
-      <div class="hero-overlay">
-      </div>
-      <div class="hero-grain">
-      </div>
-      <div class="hero-content container-fluid">
-       <div class="hero-copy reveal-block">
-        <div class="eyebrow-row">
-         <span class="eyebrow">
-          18.20° N · 121.95° E
-         </span>
-         <span class="weather-note">
-          <i class="bi bi-wind">
-          </i>
-          Islands shaped by wind &amp; sea
-         </span>
-        </div>
-        <p class="hero-overline" id="heroOverline">
-         THE NORTHERNMOST ISLANDS
-        </p>
-        <h1 id="heroTitle">
-         Batanes
-        </h1>
-        <p class="hero-description" id="heroText">
-         A quiet archipelago of rolling hills, stone villages and dramatic coastlines at the northern edge of the Philippines.
-        </p>
-        <div class="hero-actions">
-         <button class="btn-main" data-view="discover">
-          Start exploring
-          <i class="bi bi-arrow-up-right">
-          </i>
-         </button>
-         <button class="btn-ghost" data-view="plan">
-          <i class="bi bi-compass">
-          </i>
-          Plan a trip
-         </button>
-        </div>
-       </div>
-       <div class="hero-side">
-        <div class="hero-side-head">
-         <span>
-          Explore by area
-         </span>
-         <small>
-          SELECT A STORY
-         </small>
-        </div>
-        <div class="hero-deck" id="heroDeck">
-        </div>
-       </div>
-      </div>
-      <div class="home-bottom">
-       <div class="hero-pagination">
-        <b id="heroIndex">
-         01
-        </b>
-        <div class="progress-track">
-         <i id="heroProgress">
-         </i>
-        </div>
-        <span>
-         04
-        </span>
-       </div>
-       <div class="quick-facts">
-        <div>
-         <i class="bi bi-geo-alt">
-         </i>
-         <span>
-          <small>
-           PROVINCE
-          </small>
-          <b>
-           Batanes
-          </b>
-         </span>
-        </div>
-        <div>
-         <i class="bi bi-airplane">
-         </i>
-         <span>
-          <small>
-           MAIN GATEWAY
-          </small>
-          <b>
-           Basco Airport
-          </b>
-         </span>
-        </div>
-        <div>
-         <i class="bi bi-people">
-         </i>
-         <span>
-          <small>
-           HERITAGE
-          </small>
-          <b>
-           Ivatan culture
-          </b>
-         </span>
-        </div>
-       </div>
-       <button class="scroll-cue" data-view="discover">
-        <span>
-         Discover the islands
-        </span>
-        <i class="bi bi-arrow-down">
-        </i>
-       </button>
-      </div>
-     </div>
-     <div class="home-scroll-story">
-      <section class="home-intro container-xl">
-       <div class="home-intro-copy">
-        <span class="chapter dark">
-         WELCOME / BATANES
-        </span>
-        <h2>
-         Where the road slows,
-         <br/>
-         <em>
-          the islands begin.
-         </em>
-        </h2>
-        <p>
-         Batanes is more than a checklist of viewpoints. It is a landscape shaped by wind, sea and Ivatan life—best experienced with time to notice the details.
-        </p>
-        <div class="home-stat-row">
-         <div>
-          <b>
-           4
-          </b>
-          <span>
-           island stories
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <meta content="#0e3f43" name="theme-color" />
+    <title>Batanes — Where the Wind Leads</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;family=Playfair+Display:ital,wght@0,600;1,600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="appShell">
+      <header class="site-header" id="siteHeader">
+        <button type="button" aria-label="Go to home" class="brand" data-view="home">
+          <span class="brand-seal"> B </span>
+          <span class="brand-copy">
+            <b> BATANES </b>
+            <small> Philippines </small>
           </span>
-         </div>
-         <div>
-          <b>
-           BSO
-          </b>
-          <span>
-           main air gateway
-          </span>
-         </div>
-         <div>
-          <b>
-           Ivatan
-          </b>
-          <span>
-           living heritage
-          </span>
-         </div>
-        </div>
-       </div>
-       <figure class="home-editorial-photo">
-        <img alt="Batanes hills and lighthouse" class="img-fluid" src="assets/portrait-user.png"/>
-        <figcaption>
-         Wind-shaped landscapes · Batanes
-        </figcaption>
-       </figure>
-      </section>
-      <section class="home-islands container-xl">
-       <div class="section-heading">
-        <div>
-         <span class="micro-label">
-          EXPLORE THE ISLANDS
-         </span>
-         <h3>
-          Four directions.
-          <br/>
-          <em>
-           One remarkable province.
-          </em>
-         </h3>
-        </div>
-        <button class="text-link dark-link" data-view="discover">
-         Open Discover
-         <i class="bi bi-arrow-right">
-         </i>
         </button>
-       </div>
-       <div class="home-island-grid" id="homeIslandGrid">
-       </div>
-      </section>
-      <section class="home-featured">
-       <div class="container-xl">
-        <div class="section-heading light-heading">
-         <div>
-          <span class="micro-label">
-           PLACES TO REMEMBER
-          </span>
-          <h3>
-           Start with the icons.
-           <br/>
-           <em>
-            Stay for the in-between.
-           </em>
-          </h3>
-         </div>
-        </div>
-        <div class="home-place-rail" id="homePlaceRail">
-        </div>
-       </div>
-      </section>
-      <section class="home-plan-tease container-xl">
-       <div>
-        <span class="micro-label">
-         MAKE IT YOURS
-        </span>
-        <h3>
-         Discover. Schedule.
-         <br/>
-         <em>
-          Remember.
-         </em>
-        </h3>
-        <p>
-         Build a day-by-day itinerary, see your stops on the map, estimate your budget and turn the trip into your own Batanes story.
-        </p>
-        <button class="btn-main dark-btn" data-view="plan">
-         Start planning
-         <i class="bi bi-arrow-right">
-         </i>
-        </button>
-       </div>
-       <div class="process-steps">
-        <article>
-         <b>
-          01
-         </b>
-         <span>
-          Explore places
-         </span>
-        </article>
-        <article>
-         <b>
-          02
-         </b>
-         <span>
-          Choose day &amp; time
-         </span>
-        </article>
-        <article>
-         <b>
-          03
-         </b>
-         <span>
-          See your route
-         </span>
-        </article>
-        <article>
-         <b>
-          04
-         </b>
-         <span>
-          Save memories
-         </span>
-        </article>
-       </div>
-      </section>
-      <section class="home-closing">
-       <div>
-        <span>
-         BATANES / PHILIPPINES
-        </span>
-        <h3>
-         Some places you visit.
-         <br/>
-         <em>
-          Batanes stays with you.
-         </em>
-        </h3>
-        <button class="btn-ghost light" data-view="gallery">
-         See the photo journal
-         <i class="bi bi-arrow-right">
-         </i>
-        </button>
-       </div>
-      </section>
-     </div>
-    </section>
-    <!-- DISCOVER -->
-    <section class="view discover-view" data-page="discover">
-     <div class="discover-layout">
-      <aside class="discover-sidebar">
-       <div>
-        <span class="chapter">
-         01 / DISCOVER
-        </span>
-        <h2>
-         One province.
-         <br/>
-         <em>
-          Four stories.
-         </em>
-        </h2>
-        <p>
-         Choose an island area and let the scene, places and map change around it.
-        </p>
-       </div>
-       <div class="zone-tabs" id="zoneTabs">
-       </div>
-       <button class="text-link" id="mapToggle">
-        <i class="bi bi-map">
-        </i>
-        Explore interactive map
-        <i class="bi bi-arrow-right">
-        </i>
-       </button>
-      </aside>
-      <div class="discover-canvas">
-       <div class="zone-backdrop" id="zoneBackdrop">
-       </div>
-       <div class="discover-shade">
-       </div>
-       <div class="zone-story">
-        <span id="zoneNo">
-         01
-        </span>
-        <small id="zoneLabel">
-         NORTH BATAN
-        </small>
-        <h3 id="zoneTitle">
-         North Batan
-        </h3>
-        <p id="zoneDesc">
-        </p>
-        <div class="zone-meta" id="zoneMeta">
-        </div>
-       </div>
-       <div class="places-panel">
-        <div class="places-heading">
-         <span>
-          Places worth slowing down for
-         </span>
-         <small>
-          CLICK TO VIEW DETAILS
-         </small>
-        </div>
-        <div class="place-strip" id="placeStrip">
-        </div>
-       </div>
-      </div>
-     </div>
-     <div aria-hidden="true" class="map-drawer" id="mapDrawer">
-      <div class="map-panel-head">
-       <div>
-        <span>
-         BATANES / INTERACTIVE MAP
-        </span>
-        <h3>
-         Explore the islands
-        </h3>
-       </div>
-       <button aria-label="Close map" id="mapClose">
-        <i class="bi bi-x-lg">
-        </i>
-       </button>
-      </div>
-      <div class="map-body">
-       <div id="map">
-       </div>
-       <aside id="mapInfo">
-        <span>
-         SELECT A MARKER
-        </span>
-        <h4>
-         Find your next stop
-        </h4>
-        <p>
-         Tap a marker to see where it belongs in your trip.
-        </p>
-       </aside>
-      </div>
-     </div>
-    </section>
-    <!-- EXPERIENCES -->
-    <section class="view experiences-view" data-page="experiences">
-     <div class="experience-layout">
-      <header class="experience-intro">
-       <span class="chapter dark">
-        02 / EXPERIENCES
-       </span>
-       <h2>
-        See Batanes.
-        <br/>
-        <em>
-         Then feel it.
-        </em>
-       </h2>
-       <p>
-        Landscapes are only half the story. Explore culture, food, village life and the slower rhythms that make the islands distinct.
-       </p>
-       <div class="experience-tabs" id="experienceTabs">
-       </div>
-      </header>
-      <div class="experience-feature">
-       <div class="experience-media" id="experienceMedia">
-        <div class="experience-photo-track" id="experiencePhotoTrack">
-        </div>
-        <button aria-label="Previous photo" class="photo-nav prev" id="experiencePrevPhoto">
-         <i class="bi bi-arrow-left">
-         </i>
-        </button>
-        <button aria-label="Next photo" class="photo-nav next" id="experienceNextPhoto">
-         <i class="bi bi-arrow-right">
-         </i>
-        </button>
-        <div class="photo-counter" id="experiencePhotoCounter">
-         01 / 03
-        </div>
-       </div>
-       <div class="experience-card">
-        <div class="experience-count">
-         <span id="experienceNo">
-          01
-         </span>
-         <i>
-         </i>
-         <small>
-          05
-         </small>
-        </div>
-        <span class="micro-label" id="experienceType">
-         CULTURE
-        </span>
-        <h3 id="experienceTitle">
-        </h3>
-        <p id="experienceText">
-        </p>
-        <div class="tag-row" id="experienceTags">
-        </div>
-        <div class="experience-actions">
-         <button class="btn-main dark-btn" id="saveExperience">
-          <i class="bi bi-plus-lg">
-          </i>
-          Add to itinerary
-         </button>
-         <button aria-label="Next experience" class="round-action" id="nextExperience">
-          <i class="bi bi-arrow-right">
-          </i>
-         </button>
-        </div>
-       </div>
-      </div>
-      <div class="experience-notes">
-       <div>
-        <span>
-         TRAVEL GENTLY
-        </span>
-        <p>
-         Respect homes, farms, sacred places and community rules. Ask before photographing people.
-        </p>
-       </div>
-       <div>
-        <span>
-         TASTE LOCALLY
-        </span>
-        <p>
-         Look for Ivatan dishes such as luñis, uved and vunes when available.
-        </p>
-       </div>
-       <div>
-        <span>
-         LEAVE ROOM
-        </span>
-        <p>
-         Weather changes quickly. Keep your itinerary flexible instead of packing every hour.
-        </p>
-       </div>
-      </div>
-     </div>
-    </section>
-    <!-- GUIDE -->
-    <section aria-labelledby="guidePageTitle" class="view guide-view" data-page="guide">
-     <div class="guide-scroll">
-      <section class="guide-hero container-xl py-5 py-lg-6">
-       <div class="row align-items-end g-4">
-        <div class="col-lg-7">
-         <span class="chapter dark">
-          03 / TRAVEL GUIDE
-         </span>
-         <h2 id="guidePageTitle">
-          Know the islands
-          <br/>
-          <em>
-           before you arrive.
-          </em>
-         </h2>
-        </div>
-        <div class="col-lg-5 guide-lead">
-         <p>
-          Batanes is the northernmost province of the Philippines and part of the Cagayan Valley region. Use the cards below as an interactive field guide while you build your trip.
-         </p>
-         <button class="text-link dark-link" data-view="plan">
-          Skip to trip planner
-          <i class="bi bi-arrow-right">
-          </i>
-         </button>
-        </div>
-       </div>
-      </section>
-      <section aria-label="Interactive Batanes guide topics" class="container-xl pb-5">
-       <div class="row g-3 g-lg-4 guide-card-grid">
-        <div class="col-12 col-md-6 col-xl-4">
-         <button class="card guide-topic-card h-100 w-100 text-start border-0 shadow-sm" data-guide-card="location">
-          <div class="card-body p-4 p-lg-5">
-           <span class="guide-number">
-            01
-           </span>
-           <i class="bi bi-geo-alt guide-icon">
-           </i>
-           <small>
-            LOCATION
-           </small>
-           <h3>
-            Where is Batanes?
-           </h3>
-           <p>
-            See the province in context and explore its main island areas on a map.
-           </p>
-           <span class="guide-open">
-            Open guide
-            <i class="bi bi-arrow-up-right">
-            </i>
-           </span>
-          </div>
-         </button>
-        </div>
-        <div class="col-12 col-md-6 col-xl-4">
-         <button class="card guide-topic-card h-100 w-100 text-start border-0 shadow-sm" data-guide-card="people">
-          <div class="card-body p-4 p-lg-5">
-           <span class="guide-number">
-            02
-           </span>
-           <i class="bi bi-people guide-icon">
-           </i>
-           <small>
-            PEOPLE &amp; CULTURE
-           </small>
-           <h3>
-            Meet the Ivatan story.
-           </h3>
-           <p>
-            Understand the people, architecture and living culture behind the scenery.
-           </p>
-           <span class="guide-open">
-            Open guide
-            <i class="bi bi-arrow-up-right">
-            </i>
-           </span>
-          </div>
-         </button>
-        </div>
-        <div class="col-12 col-md-6 col-xl-4">
-         <button class="card guide-topic-card h-100 w-100 text-start border-0 shadow-sm" data-guide-card="getting">
-          <div class="card-body p-4 p-lg-5">
-           <span class="guide-number">
-            03
-           </span>
-           <i class="bi bi-airplane guide-icon">
-           </i>
-           <small>
-            GETTING THERE
-           </small>
-           <h3>
-            Arrive through Basco.
-           </h3>
-           <p>
-            See the main gateway, route notes and a working airfare estimate.
-           </p>
-           <span class="guide-open">
-            Open guide
-            <i class="bi bi-arrow-up-right">
-            </i>
-           </span>
-          </div>
-         </button>
-        </div>
-        <div class="col-12 col-md-6 col-xl-4">
-         <button class="card guide-topic-card h-100 w-100 text-start border-0 shadow-sm" data-guide-card="season">
-          <div class="card-body p-4 p-lg-5">
-           <span class="guide-number">
-            04
-           </span>
-           <i class="bi bi-cloud-sun guide-icon">
-           </i>
-           <small>
-            BEST TIME
-           </small>
-           <h3>
-            Pick the right rhythm.
-           </h3>
-           <p>
-            Compare seasons by reason, trade-offs and the kind of trip they suit.
-           </p>
-           <span class="guide-open">
-            Open guide
-            <i class="bi bi-arrow-up-right">
-            </i>
-           </span>
-          </div>
-         </button>
-        </div>
-        <div class="col-12 col-md-6 col-xl-4">
-         <button class="card guide-topic-card h-100 w-100 text-start border-0 shadow-sm" data-guide-card="food">
-          <div class="card-body p-4 p-lg-5">
-           <span class="guide-number">
-            05
-           </span>
-           <i class="bi bi-cup-hot guide-icon">
-           </i>
-           <small>
-            FOOD
-           </small>
-           <h3>
-            Taste Batanes.
-           </h3>
-           <p>
-            Browse must-try Ivatan dishes and the cultural stories connected to them.
-           </p>
-           <span class="guide-open">
-            Open guide
-            <i class="bi bi-arrow-up-right">
-            </i>
-           </span>
-          </div>
-         </button>
-        </div>
-        <div class="col-12 col-md-6 col-xl-4">
-         <button class="card guide-topic-card h-100 w-100 text-start border-0 shadow-sm" data-guide-card="tips">
-          <div class="card-body p-4 p-lg-5">
-           <span class="guide-number">
-            06
-           </span>
-           <i class="bi bi-signpost-split guide-icon">
-           </i>
-           <small>
-            LOCAL TIPS
-           </small>
-           <h3>
-            Travel with context.
-           </h3>
-           <p>
-            Practical reminders for weather, cash, communities and heritage sites.
-           </p>
-           <span class="guide-open">
-            Open guide
-            <i class="bi bi-arrow-up-right">
-            </i>
-           </span>
-          </div>
-         </button>
-        </div>
-       </div>
-      </section>
-      <section class="story-split container-xl my-4 my-lg-5">
-       <div class="story-media">
-        <img alt="Batanes landscape and Ivatan heritage" class="img-fluid rounded-4" src="assets/images/ivatan-heritage.jpg"/>
-       </div>
-       <div class="story-copy">
-        <span class="micro-label">
-         BACKGROUND &amp; HERITAGE
-        </span>
-        <h3>
-         Life built around wind, stone and sea.
-        </h3>
-        <p>
-         Traditional Ivatan stone houses are among Batanes' most recognizable cultural features. Farming, fishing, food traditions and settlement patterns reflect generations of adaptation to an exposed island environment.
-        </p>
-        <blockquote>
-         Come for the landscape. Stay curious about the people who shaped it.
-        </blockquote>
-       </div>
-      </section>
-      <section class="travel-table-section container-xl py-5">
-       <div class="table-title row align-items-end g-3">
-        <div class="col-lg-7">
-         <span class="micro-label">
-          BOOTSTRAP RESPONSIVE TABLE
-         </span>
-         <h3>
-          Your itinerary at a glance
-         </h3>
-        </div>
-        <div class="col-lg-5">
-         <p>
-          This table updates from
-          <strong>
-           My Trip
-          </strong>
-          . Before you schedule anything, it shows example planning categories.
-         </p>
-        </div>
-       </div>
-       <div class="table-responsive rounded-4 shadow-sm mt-4">
-        <table class="table table-striped table-bordered table-hover align-middle mb-0">
-         <thead class="table-head-custom">
-          <tr>
-           <th>
-            Day
-           </th>
-           <th>
-            Time
-           </th>
-           <th>
-            Place / Activity
-           </th>
-           <th>
-            Area
-           </th>
-           <th>
-            Est. Cost
-           </th>
-          </tr>
-         </thead>
-         <tbody id="planningTableBody">
-         </tbody>
-        </table>
-       </div>
-      </section>
-     </div>
-    </section>
-    <!-- PLAN -->
-    <section class="view plan-view" data-page="plan">
-     <div class="plan-shell">
-      <header class="plan-header">
-       <div>
-        <span class="chapter">
-         04 / PLAN YOUR TRIP
-        </span>
-        <h2>
-         Build a trip that
-         <br/>
-         <em>
-          breathes.
-         </em>
-        </h2>
-       </div>
-       <p>
-        Start with the route, then shape the days and budget. Variable fares stay editable so the planner doesn't pretend old prices are current.
-       </p>
-      </header>
-      <div class="planner-progress">
-       <button class="planner-step active" data-step="1">
-        <b>
-         01
-        </b>
-        <span>
-         Arrival
-        </span>
-       </button>
-       <i>
-       </i>
-       <button class="planner-step" data-step="2">
-        <b>
-         02
-        </b>
-        <span>
-         Explore
-        </span>
-       </button>
-       <i>
-       </i>
-       <button class="planner-step" data-step="3">
-        <b>
-         03
-        </b>
-        <span>
-         Budget
-        </span>
-       </button>
-       <i>
-       </i>
-       <button class="planner-step" data-step="4">
-        <b>
-         04
-        </b>
-        <span>
-         Review
-        </span>
-       </button>
-      </div>
-      <div class="planner-layout">
-       <form class="planner-card" onsubmit="return false">
-        <div class="planner-pane active" data-pane="1">
-         <span class="micro-label">
-          STARTING POINT
-         </span>
-         <h3>
-          Where will your journey begin?
-         </h3>
-         <label for="origin">
-          Origin
-         </label>
-         <select class="form-select" id="origin">
-          <optgroup label="Common gateways">
-           <option value="manila">
-            Metro Manila
-           </option>
-           <option value="clark">
-            Clark / Central Luzon
-           </option>
-           <option value="cebu">
-            Cebu
-           </option>
-           <option value="davao">
-            Davao
-           </option>
-          </optgroup>
-          <option value="other">
-           Other location
-          </option>
-         </select>
-         <div class="custom-origin d-none" id="customOriginWrap">
-          <label for="customOrigin">
-           Your location
-          </label>
-          <input class="form-control" id="customOrigin" placeholder="e.g. Iloilo City"/>
-         </div>
-         <div class="route-card">
-          <i class="bi bi-airplane">
-          </i>
-          <div>
-           <small>
-            MAIN VISITOR GATEWAY
-           </small>
-           <b>
-            Basco Airport (BSO)
-           </b>
-           <p>
-            Enter your actual airfare later; schedules and prices vary.
-           </p>
-          </div>
-         </div>
-        </div>
-        <div class="planner-pane" data-pane="2">
-         <span class="micro-label">
-          ISLAND ROUTE
-         </span>
-         <h3>
-          What do you want to prioritize?
-         </h3>
-         <div class="choice-grid" id="areaChoices">
-         </div>
-         <div class="row g-3 mt-3">
-          <div class="col-6">
-           <label>
-            Travelers
-           </label>
-           <input class="form-control" id="travelers" min="1" type="number" value="2"/>
-          </div>
-          <div class="col-6">
-           <label>
-            Days
-           </label>
-           <input class="form-control" id="days" max="14" min="1" type="number" value="4"/>
-          </div>
-         </div>
-        </div>
-        <div class="planner-pane" data-pane="3">
-         <span class="micro-label">
-          ESTIMATED EXPENSES
-         </span>
-         <h3>
-          Set your working budget.
-         </h3>
-         <div class="row g-3">
-          <div class="col-md-6">
-           <label>
-            Round-trip airfare / person
-           </label>
-           <div class="input-group">
-            <span class="input-group-text">
-             ₱
-            </span>
-            <input class="form-control" id="airfare" min="0" step="1" type="number" value="0"/>
-           </div>
-          </div>
-          <div class="col-md-6">
-           <label>
-            Daily food &amp; misc. / person
-           </label>
-           <div class="input-group">
-            <span class="input-group-text">
-             ₱
-            </span>
-            <input class="form-control" id="daily" min="0" step="1" type="number" value="1200"/>
-           </div>
-          </div>
-          <div class="col-md-6">
-           <label>
-            Accommodation / night
-           </label>
-           <div class="input-group">
-            <span class="input-group-text">
-             ₱
-            </span>
-            <input class="form-control" id="stayCost" min="0" step="1" type="number" value="0"/>
-           </div>
-          </div>
-          <div class="col-md-6">
-           <label>
-            Tours / local transport total
-           </label>
-           <div class="input-group">
-            <span class="input-group-text">
-             ₱
-            </span>
-            <input class="form-control" id="localCost" min="0" step="1" type="number" value="0"/>
-           </div>
-          </div>
-         </div>
-         <p class="planner-note">
-          <i class="bi bi-info-circle">
-          </i>
-          Enter current quotes you actually find. This avoids presenting old guide prices as 2026 rates.
-         </p>
-        </div>
-        <div class="planner-pane" data-pane="4">
-         <span class="micro-label">
-          READY TO GO
-         </span>
-         <h3>
-          Your Batanes outline.
-         </h3>
-         <div class="review-route" id="reviewRoute">
-         </div>
-         <button class="btn-main dark-btn wide" id="buildTrip">
-          Save plan &amp; build itinerary
-          <i class="bi bi-arrow-right">
-          </i>
-         </button>
-        </div>
-        <div class="planner-nav">
-         <button class="btn-back" id="plannerBack" type="button">
-          <i class="bi bi-arrow-left">
-          </i>
-          Back
-         </button>
-         <button class="btn-main dark-btn" id="plannerNext" type="button">
-          Continue
-          <i class="bi bi-arrow-right">
-          </i>
-         </button>
-        </div>
-       </form>
-       <aside class="trip-summary">
-        <div class="summary-head">
-         <span>
-          LIVE TRIP SUMMARY
-         </span>
-         <b id="summaryDays">
-          4 DAYS
-         </b>
-        </div>
-        <div class="journey-visual">
-         <div class="journey-stop">
-          <i class="bi bi-geo">
-          </i>
-          <span>
-           <small>
-            FROM
-           </small>
-           <b id="summaryOrigin">
-            Metro Manila
-           </b>
-          </span>
-         </div>
-         <i class="journey-line">
-         </i>
-         <div class="journey-stop">
-          <i class="bi bi-airplane">
-          </i>
-          <span>
-           <small>
-            ARRIVE
-           </small>
-           <b>
-            Basco Airport
-           </b>
-          </span>
-         </div>
-         <i class="journey-line">
-         </i>
-         <div class="journey-stop">
-          <i class="bi bi-compass">
-          </i>
-          <span>
-           <small>
-            FOCUS
-           </small>
-           <b id="summaryArea">
-            North Batan
-           </b>
-          </span>
-         </div>
-        </div>
-        <div class="budget-card">
-         <small>
-          WORKING TOTAL
-         </small>
-         <strong id="budgetTotal">
-          ₱9,600
-         </strong>
-         <div id="budgetBreakdown">
-         </div>
-        </div>
-        <div class="mini-itinerary">
-         <span>
-          RECOMMENDED FLOW
-         </span>
-         <div id="itineraryPreview">
-         </div>
-        </div>
-       </aside>
-      </div>
-     </div>
-    </section>
-    <!-- ITINERARY -->
-    <section class="view itinerary-view" data-page="itinerary">
-     <div class="itinerary-shell">
-      <header class="itinerary-header">
-       <div>
-        <span class="chapter dark">
-         05 / MY ITINERARY
-        </span>
-        <h2>
-         A plan with room
-         <br/>
-         <em>
-          for the weather.
-         </em>
-        </h2>
-       </div>
-       <div class="itinerary-actions">
-        <button class="btn-outline" id="addCustom">
-         <i class="bi bi-plus-circle">
-         </i>
-         Custom activity
-        </button>
-        <button class="btn-outline" id="tripMapToggle">
-         <i class="bi bi-map">
-         </i>
-         Map view
-        </button>
-        <button class="btn-outline" id="addDay">
-         <i class="bi bi-plus">
-         </i>
-         Add day
-        </button>
-        <button class="btn-outline danger" id="clearItinerary">
-         <i class="bi bi-trash3">
-         </i>
-         Clear
-        </button>
-       </div>
-      </header>
-      <div class="itinerary-grid">
-       <div class="day-timeline" id="dayTimeline">
-       </div>
-       <aside class="saved-panel">
-        <span class="micro-label">
-         SAVED FROM DISCOVER
-        </span>
-        <h3>
-         Your shortlist
-        </h3>
-        <div id="savedItems">
-        </div>
-        <p class="empty-hint" id="savedHint">
-         Save destinations and experiences while exploring. They'll appear here.
-        </p>
-       </aside>
-      </div>
-     </div>
-    </section>
-    <!-- GALLERY -->
-    <section class="view gallery-view" data-page="gallery">
-     <div class="gallery-scroll">
-      <header class="gallery-header container-xl">
-       <div>
-        <span class="chapter dark">
-         06 / GALLERY &amp; CULTURE
-        </span>
-        <h2>
-         Keep a little
-         <br/>
-         <em>
-          of the islands.
-         </em>
-        </h2>
-       </div>
-       <p>
-        Landscapes, heritage, food and personal memories in one visual chapter.
-       </p>
-      </header>
-      <section class="culture-feature container-xl">
-       <article class="culture-main">
-        <span>
-         CULTURE NOTE
-        </span>
-        <h3>
-         Ivatan life is more than a backdrop.
-        </h3>
-        <p>
-         Use this space for respectful context about community traditions, architecture and everyday island life.
-        </p>
-        <button class="text-link dark-link" id="cultureMore">
-         Read cultural notes
-         <i class="bi bi-arrow-right">
-         </i>
-        </button>
-       </article>
-       <div class="culture-cards">
-        <article>
-         <i class="bi bi-cup-hot">
-         </i>
-         <span>
-          FOOD
-         </span>
-         <b>
-          Luñis · Uved · Vunes
-         </b>
-         <p>
-          Introduce local dishes with context.
-         </p>
-        </article>
-        <article>
-         <i class="bi bi-house-heart">
-         </i>
-         <span>
-          HERITAGE
-         </span>
-         <b>
-          Stone villages
-         </b>
-         <p>
-          Architecture shaped by climate and history.
-         </p>
-        </article>
-       </div>
-      </section>
-      <section class="gallery-section container-xl">
-       <div class="gallery-title">
-        <div>
-         <span class="micro-label">
-          PHOTO JOURNAL
-         </span>
-         <h3>
-          Scenes from Batanes
-         </h3>
-        </div>
-        <div class="gallery-filter">
-         <button class="active" data-filter="all">
-          All
-         </button>
-         <button data-filter="landscape">
-          Landscape
-         </button>
-         <button data-filter="culture">
-          Culture
-         </button>
-         <button data-filter="coast">
-          Coast
-         </button>
-        </div>
-       </div>
-       <div class="gallery-mosaic" id="galleryMosaic">
-       </div>
-      </section>
-      <section class="memories-section">
-       <div class="container-xl">
-        <div class="memory-head">
-         <div>
-          <span class="micro-label">
-           MY BATANES STORY
-          </span>
-          <h3>
-           Turn moments into
-           <br/>
-           <em>
-            a travel journal.
-           </em>
-          </h3>
-          <p>
-           Pair your photos with the places, days and little details you want to remember. Your story stays private to this browser.
-          </p>
-         </div>
-         <div class="d-flex flex-wrap gap-2">
-          <label class="upload-btn story-upload">
-           <i class="bi bi-camera">
-           </i>
-           Create a memory
-           <input accept="image/*" hidden="" id="memoryUpload" multiple="" type="file"/>
-          </label>
-          <button class="btn-outline" id="openCollage">
-           <i class="bi bi-grid-3x3-gap">
-           </i>
-           Create collage
+        <nav aria-label="Primary navigation" class="desktop-nav">
+          <button type="button" class="active" data-view="home">Home</button>
+          <button type="button" data-view="discover">Discover</button>
+          <button type="button" data-view="experiences">Experiences</button>
+          <button type="button" data-view="guide">Travel Guide</button>
+          <button type="button" data-view="plan">Plan</button>
+          <button type="button" data-view="gallery">Gallery</button>
+        </nav>
+        <div class="header-actions">
+          <button type="button" class="itinerary-button" data-view="itinerary">
+            <i class="bi bi-bookmark"> </i>
+            <span> My trip </span>
+            <b class="badge" id="savedCount"> 0 </b>
           </button>
-         </div>
+          <button type="button"
+            aria-controls="mobileMenu"
+            aria-expanded="false"
+            aria-label="Open menu"
+            class="menu-button"
+            id="menuBtn"
+          >
+            <i class="bi bi-list"> </i>
+          </button>
         </div>
-        <div class="memory-inspiration">
-         <div>
-          <i class="bi bi-journal-heart">
-          </i>
-          <b>
-           Not just an upload.
-          </b>
-          <span>
-           Build a visual diary connected to your itinerary.
-          </span>
-         </div>
-         <div>
-          <i class="bi bi-shield-check">
-          </i>
-          <b>
-           Private by default.
-          </b>
-          <span>
-           Memories stay on this device.
-          </span>
-         </div>
-        </div>
-        <div class="memory-grid story-grid" id="memoryGrid">
-        </div>
-       </div>
-      </section>
-     </div>
-    </section>
-   </main>
-   <div aria-hidden="true" class="mobile-menu" id="mobileMenu">
-    <div class="mobile-menu-head">
-     <span>
-      BATANES
-     </span>
-     <button id="menuClose">
-      <i class="bi bi-x-lg">
-      </i>
-     </button>
-    </div>
-    <nav>
-    </nav>
-    <small>
-     WHERE THE WIND LEADS
-    </small>
-   </div>
-   <div class="page-transition" id="pageTransition">
-    <div>
-    </div>
-   </div>
-   <div aria-hidden="true" class="detail-modal" id="detailModal">
-    <div class="detail-card">
-     <button class="modal-close" id="detailClose">
-      <i class="bi bi-x-lg">
-      </i>
-     </button>
-     <div class="detail-media" id="detailMedia">
-     </div>
-     <div class="detail-copy">
-      <span id="detailArea">
-      </span>
-      <h3 id="detailTitle">
-      </h3>
-      <p id="detailText">
-      </p>
-      <div class="tag-row" id="detailTags">
-      </div>
-      <button class="btn-main dark-btn" id="detailSave">
-       <i class="bi bi-plus-lg">
-       </i>
-       Add to itinerary
-      </button>
-     </div>
-    </div>
-   </div>
-   <div aria-hidden="true" class="schedule-modal" id="scheduleModal">
-    <div class="schedule-card">
-     <button class="modal-close" id="scheduleClose">
-      <i class="bi bi-x-lg">
-      </i>
-     </button>
-     <span class="micro-label">
-      ADD TO MY TRIP
-     </span>
-     <h3 id="scheduleTitle">
-      Schedule this stop
-     </h3>
-     <p class="schedule-sub" id="scheduleSub">
-     </p>
-     <div class="row g-3">
-      <div class="col-12" id="scheduleNameWrap">
-       <label class="form-label">
-        Activity / place name
-       </label>
-       <input class="form-control form-control-lg" id="scheduleName" placeholder="e.g. Breakfast in Basco" type="text"/>
-      </div>
-      <div class="col-6">
-       <label>
-        Day
-       </label>
-       <select class="form-select" id="scheduleDay">
-       </select>
-      </div>
-      <div class="col-6">
-       <label>
-        Start time
-       </label>
-       <input class="form-control" id="scheduleStart" type="time" value="09:00"/>
-      </div>
-      <div class="col-6">
-       <label>
-        End time
-       </label>
-       <input class="form-control" id="scheduleEnd" type="time" value="10:30"/>
-      </div>
-      <div class="col-6">
-       <label>
-        Estimated cost
-       </label>
-       <div class="input-group">
-        <span class="input-group-text">
-         ₱
-        </span>
-        <input class="form-control" id="scheduleCost" min="0" step="1" type="number" value="0"/>
-       </div>
-      </div>
-      <div class="col-12">
-       <label>
-        Notes
-       </label>
-       <textarea class="form-control" id="scheduleNotes" placeholder="Sunrise visit, bring a jacket, lunch after..." rows="3"></textarea>
-      </div>
-     </div>
-     <div class="overlap-warning" id="overlapWarning">
-     </div>
-     <button class="btn-main dark-btn wide" id="scheduleSave">
-      Add to itinerary
-      <i class="bi bi-arrow-right">
-      </i>
-     </button>
-    </div>
-   </div>
-   <div class="trip-map-modal" id="tripMapModal">
-    <div class="trip-map-card">
-     <button class="modal-close" id="tripMapClose">
-      <i class="bi bi-x-lg">
-      </i>
-     </button>
-     <div class="trip-map-head">
-      <span class="micro-label">
-       MY TRIP / MAP VIEW
-      </span>
-      <h3>
-       Your scheduled Batanes stops
-      </h3>
-     </div>
-     <div id="tripMap">
-     </div>
-    </div>
-   </div>
-   <div class="memory-modal" id="memoryModal">
-    <div class="memory-editor">
-     <button class="modal-close" id="memoryClose">
-      <i class="bi bi-x-lg">
-      </i>
-     </button>
-     <span class="micro-label">
-      CREATE A MEMORY
-     </span>
-     <h3>
-      What do you want to remember?
-     </h3>
-     <img alt="Memory preview" id="memoryPreview"/>
-     <div class="row g-3">
-      <div class="col-md-6">
-       <label>
-        Where was this?
-       </label>
-       <input class="form-control" id="memoryPlace" placeholder="e.g. Vayang Rolling Hills"/>
-      </div>
-      <div class="col-md-6">
-       <label>
-        Day
-       </label>
-       <select class="form-select" id="memoryDay">
-       </select>
-      </div>
-      <div class="col-12">
-       <label>
-        Your memory
-       </label>
-       <textarea class="form-control" id="memoryNote" placeholder="The wind was so strong here..." rows="3"></textarea>
-      </div>
-     </div>
-     <button class="btn-main dark-btn wide" id="memorySave">
-      Save to my story
-      <i class="bi bi-heart">
-      </i>
-     </button>
-    </div>
-   </div>
-   <div aria-hidden="true" aria-labelledby="guideDetailTitle" class="modal fade" id="guideDetailModal" tabindex="-1">
-    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
-     <div class="modal-content guide-detail-modal-content border-0">
-      <button aria-label="Close" class="btn-close guide-bootstrap-close" data-bs-dismiss="modal" type="button">
-      </button>
-      <div class="modal-body p-0" id="guideDetailBody">
-      </div>
-     </div>
-    </div>
-   </div>
-   <div aria-hidden="true" aria-labelledby="collageTitle" class="modal fade" id="collageModal" tabindex="-1">
-    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
-     <div class="modal-content collage-modal-content border-0">
-      <div class="modal-header border-0 px-4 px-lg-5 pt-4">
-       <div>
-        <span class="micro-label">
-         MY BATANES STORY
-        </span>
-        <h3 class="modal-title" id="collageTitle">
-         Create a memory collage
-        </h3>
-       </div>
-       <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button">
-       </button>
-      </div>
-      <div class="modal-body px-4 px-lg-5 pb-5">
-       <div class="row g-4 g-xl-5">
-        <div class="col-lg-4">
-         <div class="collage-controls card border-0 shadow-sm">
-          <div class="card-body p-4">
-           <label class="form-label">
-            Collage title
-           </label>
-           <input class="form-control" id="collageHeading" value="BATANES MEMORIES"/>
-           <label class="form-label mt-3">
-            Subtitle
-           </label>
-           <input class="form-control" id="collageSubtitle" value="Where the wind led us."/>
-           <label class="form-label mt-3">
-            Layout
-           </label>
-           <select class="form-select" id="collageLayout">
-            <option value="grid">
-             Editorial Grid
-            </option>
-            <option value="postcard">
-             Postcard
-            </option>
-            <option value="film">
-             Film Strip
-            </option>
-           </select>
-           <label class="form-label mt-3">
-            Format
-           </label>
-           <select class="form-select" id="collageFormat">
-            <option value="post">
-             Post · 4:5
-            </option>
-            <option value="story">
-             Story · 9:16
-            </option>
-            <option value="landscape">
-             Landscape · 16:9
-            </option>
-           </select>
-           <div class="mt-4">
-            <small class="micro-label">
-             SELECT 2–6 MEMORIES
-            </small>
-            <div class="collage-picker mt-2" id="collagePicker">
+      </header>
+      <main id="views">
+        <!-- HOME -->
+        <section
+          aria-label="Home"
+          class="view active home-view"
+          data-page="home"
+        >
+          <div class="home-stage">
+            <div class="hero-bg" id="heroBg"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-grain"></div>
+            <div class="hero-content container-fluid">
+              <div class="hero-copy reveal-block">
+                <div class="eyebrow-row">
+                  <span class="eyebrow"> 18.20° N · 121.95° E </span>
+                  <span class="weather-note">
+                    <i class="bi bi-wind"> </i>
+                    Islands shaped by wind &amp; sea
+                  </span>
+                </div>
+                <p class="hero-overline" id="heroOverline">
+                  THE NORTHERNMOST ISLANDS
+                </p>
+                <h1 id="heroTitle">Batanes</h1>
+                <p class="hero-description" id="heroText">
+                  A quiet archipelago of rolling hills, stone villages and
+                  dramatic coastlines at the northern edge of the Philippines.
+                </p>
+                <div class="hero-actions">
+                  <button type="button" class="btn-main" data-view="discover">
+                    Start exploring
+                    <i class="bi bi-arrow-up-right"> </i>
+                  </button>
+                  <button type="button" class="btn-ghost" data-view="plan">
+                    <i class="bi bi-compass"> </i>
+                    Plan a trip
+                  </button>
+                </div>
+              </div>
+              <div class="hero-side">
+                <div class="hero-side-head">
+                  <span> Explore by area </span>
+                  <small> SELECT A STORY </small>
+                </div>
+                <div class="hero-deck" id="heroDeck"></div>
+              </div>
             </div>
-           </div>
-           <button class="btn-main dark-btn wide mt-4" id="downloadCollage">
-            <i class="bi bi-download">
-            </i>
-            Save collage as PNG
-           </button>
+            <div class="home-bottom">
+              <div class="hero-pagination">
+                <b id="heroIndex"> 01 </b>
+                <div class="progress-track">
+                  <i id="heroProgress"> </i>
+                </div>
+                <span> 04 </span>
+              </div>
+              <div class="quick-facts">
+                <div>
+                  <i class="bi bi-geo-alt"> </i>
+                  <span>
+                    <small> PROVINCE </small>
+                    <b> Batanes </b>
+                  </span>
+                </div>
+                <div>
+                  <i class="bi bi-airplane"> </i>
+                  <span>
+                    <small> MAIN GATEWAY </small>
+                    <b> Basco Airport </b>
+                  </span>
+                </div>
+                <div>
+                  <i class="bi bi-people"> </i>
+                  <span>
+                    <small> HERITAGE </small>
+                    <b> Ivatan culture </b>
+                  </span>
+                </div>
+              </div>
+              <button type="button" class="scroll-cue" data-view="discover">
+                <span> Discover the islands </span>
+                <i class="bi bi-arrow-down"> </i>
+              </button>
+            </div>
           </div>
-         </div>
-         <div class="col-lg-8">
-          <div class="collage-preview-wrap">
-           <canvas height="1350" id="collageCanvas" width="1080">
-           </canvas>
+          <div class="home-scroll-story">
+            <section class="home-intro container-xl">
+              <div class="home-intro-copy">
+                <span class="chapter dark"> WELCOME / BATANES </span>
+                <h2>
+                  Where the road slows,
+                  <br />
+                  <em> the islands begin. </em>
+                </h2>
+                <p>
+                  Batanes is more than a checklist of viewpoints. It is a
+                  landscape shaped by wind, sea and Ivatan life—best experienced
+                  with time to notice the details.
+                </p>
+                <div class="home-stat-row">
+                  <div>
+                    <b> 4 </b>
+                    <span> island stories </span>
+                  </div>
+                  <div>
+                    <b> BSO </b>
+                    <span> main air gateway </span>
+                  </div>
+                  <div>
+                    <b> Ivatan </b>
+                    <span> living heritage </span>
+                  </div>
+                </div>
+              </div>
+              <figure class="home-editorial-photo">
+                <img
+                  alt="Batanes hills and lighthouse"
+                  class="img-fluid"
+                  src="assets/portrait-user.png"
+                />
+                <figcaption>Wind-shaped landscapes · Batanes</figcaption>
+              </figure>
+            </section>
+            <section class="home-islands container-xl">
+              <div class="section-heading">
+                <div>
+                  <span class="micro-label"> EXPLORE THE ISLANDS </span>
+                  <h3>
+                    Four directions.
+                    <br />
+                    <em> One remarkable province. </em>
+                  </h3>
+                </div>
+                <button type="button" class="text-link dark-link" data-view="discover">
+                  Open Discover
+                  <i class="bi bi-arrow-right"> </i>
+                </button>
+              </div>
+              <div class="home-island-grid" id="homeIslandGrid"></div>
+            </section>
+            <section class="home-featured">
+              <div class="container-xl">
+                <div class="section-heading light-heading">
+                  <div>
+                    <span class="micro-label"> PLACES TO REMEMBER </span>
+                    <h3>
+                      Start with the icons.
+                      <br />
+                      <em> Stay for the in-between. </em>
+                    </h3>
+                  </div>
+                </div>
+                <div class="home-place-rail" id="homePlaceRail"></div>
+              </div>
+            </section>
+            <section class="home-plan-tease container-xl">
+              <div>
+                <span class="micro-label"> MAKE IT YOURS </span>
+                <h3>
+                  Discover. Schedule.
+                  <br />
+                  <em> Remember. </em>
+                </h3>
+                <p>
+                  Build a day-by-day itinerary, see your stops on the map,
+                  estimate your budget and turn the trip into your own Batanes
+                  story.
+                </p>
+                <button type="button" class="btn-main dark-btn" data-view="plan">
+                  Start planning
+                  <i class="bi bi-arrow-right"> </i>
+                </button>
+              </div>
+              <div class="process-steps">
+                <article>
+                  <b> 01 </b>
+                  <span> Explore places </span>
+                </article>
+                <article>
+                  <b> 02 </b>
+                  <span> Choose day &amp; time </span>
+                </article>
+                <article>
+                  <b> 03 </b>
+                  <span> See your route </span>
+                </article>
+                <article>
+                  <b> 04 </b>
+                  <span> Save memories </span>
+                </article>
+              </div>
+            </section>
+            <section class="home-closing">
+              <div>
+                <span> BATANES / PHILIPPINES </span>
+                <h3>
+                  Some places you visit.
+                  <br />
+                  <em> Batanes stays with you. </em>
+                </h3>
+                <button type="button" class="btn-ghost light" data-view="gallery">
+                  See the photo journal
+                  <i class="bi bi-arrow-right"> </i>
+                </button>
+              </div>
+            </section>
           </div>
-         </div>
+        </section>
+        <!-- DISCOVER -->
+        <section class="view discover-view" data-page="discover">
+          <div class="discover-layout">
+            <aside class="discover-sidebar" data-header-theme="light">
+              <div>
+                <nav aria-label="breadcrumb" class="view-breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                      <a data-view="home" href="#">
+                        <i aria-hidden="true" class="glyphicon glyphicon-home">
+                        </i>
+                        Home
+                      </a>
+                    </li>
+                    <li class="breadcrumb-item">
+                      <a data-view="discover" href="#"> Discover </a>
+                    </li>
+                    <li aria-current="page" class="breadcrumb-item active">
+                      North Batan
+                    </li>
+                  </ol>
+                </nav>
+                <span class="chapter"> 01 / DISCOVER </span>
+                <h2>
+                  One province.
+                  <br />
+                  <em> Four stories. </em>
+                </h2>
+                <p>
+                  Choose an island area and let the scene, places and map change
+                  around it.
+                </p>
+              </div>
+              <div class="zone-tabs" id="zoneTabs"></div>
+              <button type="button" class="text-link" id="mapToggle">
+                <i class="bi bi-map"> </i>
+                Explore interactive map
+                <i class="bi bi-arrow-right"> </i>
+              </button>
+            </aside>
+            <div class="discover-canvas" data-header-theme="dark">
+              <div class="zone-backdrop" id="zoneBackdrop"></div>
+              <div class="discover-shade"></div>
+              <div class="zone-story">
+                <span id="zoneNo"> 01 </span>
+                <small id="zoneLabel"> NORTH BATAN </small>
+                <h3 id="zoneTitle">North Batan</h3>
+                <span class="badge w3-count-badge" id="zoneCount">
+                  3 Attractions
+                </span>
+                <p id="zoneDesc"></p>
+                <div class="zone-meta" id="zoneMeta"></div>
+              </div>
+              <div class="places-panel">
+                <div class="places-heading">
+                  <span> Places worth slowing down for </span>
+                  <small> CLICK TO VIEW DETAILS </small>
+                </div>
+                <div class="place-strip" id="placeStrip"></div>
+                <nav
+                  aria-label="Discover destinations pages"
+                  class="discover-pagination"
+                  id="discoverPagination"
+                  hidden
+                ></nav>
+              </div>
+            </div>
+          </div>
+          <div aria-hidden="true" class="map-drawer" id="mapDrawer">
+            <div class="map-panel-head">
+              <div>
+                <span> BATANES / INTERACTIVE MAP </span>
+                <h3>Explore the islands</h3>
+              </div>
+              <button type="button" aria-label="Close map" id="mapClose">
+                <i class="bi bi-x-lg"> </i>
+              </button>
+            </div>
+            <div class="map-body">
+              <div id="map"></div>
+              <aside id="mapInfo">
+                <span> SELECT A MARKER </span>
+                <h4>Find your next stop</h4>
+                <p>Tap a marker to see where it belongs in your trip.</p>
+              </aside>
+            </div>
+          </div>
+        </section>
+        <!-- EXPERIENCES -->
+        <section class="view experiences-view" data-page="experiences">
+          <div class="experience-layout">
+            <header class="experience-intro">
+              <nav aria-label="breadcrumb" class="view-breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <a data-view="home" href="#">
+                      <i aria-hidden="true" class="glyphicon glyphicon-home">
+                      </i>
+                      Home
+                    </a>
+                  </li>
+                  <li class="breadcrumb-item">
+                    <a data-view="experiences" href="#"> Experiences </a>
+                  </li>
+                  <li aria-current="page" class="breadcrumb-item active">
+                    Culture
+                  </li>
+                </ol>
+              </nav>
+              <span class="chapter dark"> 02 / EXPERIENCES </span>
+              <h2>
+                See Batanes.
+                <br />
+                <em> Then feel it. </em>
+              </h2>
+              <p>
+                Landscapes are only half the story. Explore culture, food,
+                village life and the slower rhythms that make the islands
+                distinct.
+              </p>
+              <div
+                aria-label="Experience categories"
+                class="experience-tabs btn-group"
+                id="experienceTabs"
+                role="group"
+              ></div>
+            </header>
+            <div class="experience-feature">
+              <div class="experience-media" id="experienceMedia">
+                <div
+                  class="experience-photo-track"
+                  id="experiencePhotoTrack"
+                ></div>
+                <button type="button"
+                  aria-label="Previous photo"
+                  class="photo-nav prev"
+                  id="experiencePrevPhoto"
+                >
+                  <i class="bi bi-arrow-left"> </i>
+                </button>
+                <button type="button"
+                  aria-label="Next photo"
+                  class="photo-nav next"
+                  id="experienceNextPhoto"
+                >
+                  <i class="bi bi-arrow-right"> </i>
+                </button>
+                <div class="photo-counter" id="experiencePhotoCounter">
+                  01 / 03
+                </div>
+              </div>
+              <div class="experience-card">
+                <div class="experience-count">
+                  <span id="experienceNo"> 01 </span>
+                  <i> </i>
+                  <small> 05 </small>
+                </div>
+                <span class="micro-label" id="experienceType"> CULTURE </span>
+                <h3 id="experienceTitle"></h3>
+                <p id="experienceText"></p>
+                <div class="tag-row" id="experienceTags"></div>
+                <div class="experience-actions">
+                  <button type="button" class="btn-main dark-btn" id="saveExperience">
+                    <i class="bi bi-plus-lg"> </i>
+                    Add to itinerary
+                  </button>
+                  <button type="button"
+                    aria-label="Next experience"
+                    class="round-action"
+                    id="nextExperience"
+                  >
+                    <i class="bi bi-arrow-right"> </i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="experience-notes">
+              <div>
+                <span>
+                  <i
+                    aria-hidden="true"
+                    class="glyphicon glyphicon-warning-sign"
+                  >
+                  </i>
+                  TRAVEL GENTLY
+                </span>
+                <p>
+                  Respect homes, farms, sacred places and community rules. Ask
+                  before photographing people.
+                </p>
+              </div>
+              <div>
+                <span> TASTE LOCALLY </span>
+                <p>
+                  Look for Ivatan dishes such as luñis, uved and vunes when
+                  available.
+                </p>
+              </div>
+              <div>
+                <span> LEAVE ROOM </span>
+                <p>
+                  Weather changes quickly. Keep your itinerary flexible instead
+                  of packing every hour.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- GUIDE -->
+        <section
+          aria-labelledby="guidePageTitle"
+          class="view guide-view"
+          data-page="guide"
+        >
+          <div class="guide-scroll">
+            <section class="guide-hero container-xl py-5 py-lg-6">
+              <div class="row align-items-end g-4">
+                <div class="col-lg-7">
+                  <nav aria-label="breadcrumb" class="view-breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item">
+                        <a data-view="home" href="#">
+                          <i
+                            aria-hidden="true"
+                            class="glyphicon glyphicon-home"
+                          >
+                          </i>
+                          Home
+                        </a>
+                      </li>
+                      <li aria-current="page" class="breadcrumb-item active">
+                        Travel Guide
+                      </li>
+                    </ol>
+                  </nav>
+                  <span class="chapter dark"> 03 / TRAVEL GUIDE </span>
+                  <h2 id="guidePageTitle">
+                    Know the islands
+                    <br />
+                    <em> before you arrive. </em>
+                  </h2>
+                </div>
+                <div class="col-lg-5 guide-lead">
+                  <p>
+                    Batanes is the northernmost province of the Philippines and
+                    part of the Cagayan Valley region. Use the cards below as an
+                    interactive field guide while you build your trip.
+                  </p>
+                  <button type="button" class="text-link dark-link" data-view="plan">
+                    Skip to trip planner
+                    <i class="bi bi-arrow-right"> </i>
+                  </button>
+                </div>
+              </div>
+            </section>
+            <section
+              aria-label="Interactive Batanes guide topics"
+              class="container-xl pb-5"
+            >
+              <div class="row g-3 g-lg-4 guide-card-grid">
+                <div class="col-12 col-md-6 col-xl-4">
+                  <button type="button"
+                    class="card guide-topic-card h-100 w-100 text-start border-0 shadow-sm"
+                    data-guide-card="location"
+                  >
+                    <div class="card-body p-4 p-lg-5">
+                      <span class="guide-number"> 01 </span>
+                      <i
+                        aria-hidden="true"
+                        class="glyphicon glyphicon-map-marker guide-icon"
+                      >
+                      </i>
+                      <small> LOCATION </small>
+                      <h3>Where is Batanes?</h3>
+                      <p>
+                        See the province in context and explore its main island
+                        areas on a map.
+                      </p>
+                      <span class="guide-open">
+                        Open guide
+                        <i class="bi bi-arrow-up-right"> </i>
+                      </span>
+                    </div>
+                  </button>
+                </div>
+                <div class="col-12 col-md-6 col-xl-4">
+                  <button type="button"
+                    class="card guide-topic-card h-100 w-100 text-start border-0 shadow-sm"
+                    data-guide-card="people"
+                  >
+                    <div class="card-body p-4 p-lg-5">
+                      <span class="guide-number"> 02 </span>
+                      <i class="bi bi-people guide-icon"> </i>
+                      <small> PEOPLE &amp; CULTURE </small>
+                      <h3>Meet the Ivatan story.</h3>
+                      <p>
+                        Understand the people, architecture and living culture
+                        behind the scenery.
+                      </p>
+                      <span class="guide-open">
+                        Open guide
+                        <i class="bi bi-arrow-up-right"> </i>
+                      </span>
+                    </div>
+                  </button>
+                </div>
+                <div class="col-12 col-md-6 col-xl-4">
+                  <button type="button"
+                    class="card guide-topic-card h-100 w-100 text-start border-0 shadow-sm"
+                    data-guide-card="getting"
+                  >
+                    <div class="card-body p-4 p-lg-5">
+                      <span class="guide-number"> 03 </span>
+                      <i
+                        aria-hidden="true"
+                        class="glyphicon glyphicon-plane guide-icon"
+                      >
+                      </i>
+                      <small> GETTING THERE </small>
+                      <h3>Arrive through Basco.</h3>
+                      <p>
+                        See the main gateway, route notes and a working airfare
+                        estimate.
+                      </p>
+                      <span class="guide-open">
+                        Open guide
+                        <i class="bi bi-arrow-up-right"> </i>
+                      </span>
+                    </div>
+                  </button>
+                </div>
+                <div class="col-12 col-md-6 col-xl-4">
+                  <button type="button"
+                    class="card guide-topic-card h-100 w-100 text-start border-0 shadow-sm"
+                    data-guide-card="season"
+                  >
+                    <div class="card-body p-4 p-lg-5">
+                      <span class="guide-number"> 04 </span>
+                      <i
+                        aria-hidden="true"
+                        class="glyphicon glyphicon-calendar guide-icon"
+                      >
+                      </i>
+                      <small> BEST TIME </small>
+                      <h3>Pick the right rhythm.</h3>
+                      <p>
+                        Compare seasons by reason, trade-offs and the kind of
+                        trip they suit.
+                      </p>
+                      <span class="guide-open">
+                        Open guide
+                        <i class="bi bi-arrow-up-right"> </i>
+                      </span>
+                    </div>
+                  </button>
+                </div>
+                <div class="col-12 col-md-6 col-xl-4">
+                  <button type="button"
+                    class="card guide-topic-card h-100 w-100 text-start border-0 shadow-sm"
+                    data-guide-card="food"
+                  >
+                    <div class="card-body p-4 p-lg-5">
+                      <span class="guide-number"> 05 </span>
+                      <i
+                        aria-hidden="true"
+                        class="glyphicon glyphicon-cutlery guide-icon"
+                      >
+                      </i>
+                      <small> FOOD </small>
+                      <h3>Taste Batanes.</h3>
+                      <p>
+                        Browse must-try Ivatan dishes and the cultural stories
+                        connected to them.
+                      </p>
+                      <span class="guide-open">
+                        Open guide
+                        <i class="bi bi-arrow-up-right"> </i>
+                      </span>
+                    </div>
+                  </button>
+                </div>
+                <div class="col-12 col-md-6 col-xl-4">
+                  <button type="button"
+                    class="card guide-topic-card h-100 w-100 text-start border-0 shadow-sm"
+                    data-guide-card="tips"
+                  >
+                    <div class="card-body p-4 p-lg-5">
+                      <span class="guide-number"> 06 </span>
+                      <i class="bi bi-signpost-split guide-icon"> </i>
+                      <small> LOCAL TIPS </small>
+                      <h3>Travel with context.</h3>
+                      <p>
+                        Practical reminders for weather, cash, communities and
+                        heritage sites.
+                      </p>
+                      <span class="guide-open">
+                        Open guide
+                        <i class="bi bi-arrow-up-right"> </i>
+                      </span>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </section>
+            <section class="story-split container-xl my-4 my-lg-5">
+              <div class="story-media">
+                <img
+                  alt="Batanes landscape and Ivatan heritage"
+                  class="img-fluid rounded-4"
+                  src="assets/images/ivatan-heritage.jpg"
+                />
+              </div>
+              <div class="story-copy">
+                <span class="micro-label"> BACKGROUND &amp; HERITAGE </span>
+                <h3>Life built around wind, stone and sea.</h3>
+                <p>
+                  Traditional Ivatan stone houses are among Batanes' most
+                  recognizable cultural features. Farming, fishing, food
+                  traditions and settlement patterns reflect generations of
+                  adaptation to an exposed island environment.
+                </p>
+                <blockquote>
+                  Come for the landscape. Stay curious about the people who
+                  shaped it.
+                </blockquote>
+              </div>
+            </section>
+            <section class="travel-table-section container-xl py-5">
+              <div class="table-title row align-items-end g-3">
+                <div class="col-lg-7">
+                  <span class="micro-label"> BOOTSTRAP RESPONSIVE TABLE </span>
+                  <h3>Your itinerary at a glance</h3>
+                </div>
+                <div class="col-lg-5">
+                  <p>
+                    This table updates from
+                    <strong> My Trip </strong>
+                    . Before you schedule anything, it shows example planning
+                    categories.
+                  </p>
+                </div>
+              </div>
+              <div class="table-responsive rounded-4 shadow-sm mt-4">
+                <table
+                  class="table table-striped table-bordered table-hover align-middle mb-0"
+                >
+                  <thead class="table-head-custom">
+                    <tr>
+                      <th>Day</th>
+                      <th>Time</th>
+                      <th>Place / Activity</th>
+                      <th>Area</th>
+                      <th>Est. Cost</th>
+                    </tr>
+                  </thead>
+                  <tbody id="planningTableBody"></tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+        </section>
+        <!-- PLAN -->
+        <section class="view plan-view" data-page="plan">
+          <div class="plan-shell">
+            <header class="plan-header">
+              <div>
+                <nav aria-label="breadcrumb" class="view-breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                      <a data-view="home" href="#">
+                        <i aria-hidden="true" class="glyphicon glyphicon-home">
+                        </i>
+                        Home
+                      </a>
+                    </li>
+                    <li aria-current="page" class="breadcrumb-item active">
+                      Plan
+                    </li>
+                  </ol>
+                </nav>
+                <span class="chapter"> 04 / PLAN YOUR TRIP </span>
+                <h2>
+                  Build a trip that
+                  <br />
+                  <em> breathes. </em>
+                </h2>
+              </div>
+              <p>
+                Start with the route, then shape the days and budget. Variable
+                fares stay editable so the planner doesn't pretend old prices
+                are current.
+              </p>
+            </header>
+            <div class="planner-progress">
+              <button type="button" class="planner-step active" data-step="1">
+                <b> 01 </b>
+                <span> Arrival </span>
+              </button>
+              <i> </i>
+              <button type="button" class="planner-step" data-step="2">
+                <b> 02 </b>
+                <span> Explore </span>
+              </button>
+              <i> </i>
+              <button type="button" class="planner-step" data-step="3">
+                <b> 03 </b>
+                <span> Budget </span>
+              </button>
+              <i> </i>
+              <button type="button" class="planner-step" data-step="4">
+                <b> 04 </b>
+                <span> Review </span>
+              </button>
+            </div>
+            <div class="planner-layout">
+              <form class="planner-card" onsubmit="return false;">
+                <div class="planner-pane active" data-pane="1">
+                  <span class="micro-label"> STARTING POINT </span>
+                  <h3>Where will your journey begin?</h3>
+                  <label for="origin"> Origin </label>
+                  <select class="form-select" id="origin">
+                    <optgroup label="Common gateways">
+                      <option value="manila">Metro Manila</option>
+                      <option value="clark">Clark / Central Luzon</option>
+                      <option value="cebu">Cebu</option>
+                      <option value="davao">Davao</option>
+                    </optgroup>
+                    <option value="other">Other location</option>
+                  </select>
+                  <div class="custom-origin d-none" id="customOriginWrap">
+                    <label for="customOrigin"> Your location </label>
+                    <input
+                      class="form-control"
+                      id="customOrigin"
+                      placeholder="e.g. Iloilo City"
+                    />
+                  </div>
+                  <div class="route-card">
+                    <i class="bi bi-airplane"> </i>
+                    <div>
+                      <small> MAIN VISITOR GATEWAY </small>
+                      <b> Basco Airport (BSO) </b>
+                      <p>
+                        Enter your actual airfare later; schedules and prices
+                        vary.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="planner-pane" data-pane="2">
+                  <span class="micro-label"> ISLAND ROUTE </span>
+                  <h3>What do you want to prioritize?</h3>
+                  <div class="choice-grid" id="areaChoices"></div>
+                  <div class="row g-3 mt-3">
+                    <div class="col-6">
+                      <label for="travelers"> Travelers </label>
+                      <input
+                        class="form-control"
+                        id="travelers"
+                        min="1"
+                        type="number"
+                        value="2"
+                      />
+                    </div>
+                    <div class="col-6">
+                      <label for="days"> Days </label>
+                      <input
+                        class="form-control"
+                        id="days"
+                        max="14"
+                        min="1"
+                        type="number"
+                        value="4"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="planner-pane" data-pane="3">
+                  <span class="micro-label"> ESTIMATED EXPENSES </span>
+                  <h3>Set your working budget.</h3>
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label for="airfare"> Round-trip airfare / person </label>
+                      <div class="input-group">
+                        <span class="input-group-text"> ₱ </span>
+                        <input
+                          class="form-control"
+                          id="airfare"
+                          min="0"
+                          step="1"
+                          type="number"
+                          value="0"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="daily"> Daily food &amp; misc. / person </label>
+                      <div class="input-group">
+                        <span class="input-group-text"> ₱ </span>
+                        <input
+                          class="form-control"
+                          id="daily"
+                          min="0"
+                          step="1"
+                          type="number"
+                          value="1200"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="stayCost"> Accommodation / night </label>
+                      <div class="input-group">
+                        <span class="input-group-text"> ₱ </span>
+                        <input
+                          class="form-control"
+                          id="stayCost"
+                          min="0"
+                          step="1"
+                          type="number"
+                          value="0"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="localCost"> Tours / local transport total </label>
+                      <div class="input-group">
+                        <span class="input-group-text"> ₱ </span>
+                        <input
+                          class="form-control"
+                          id="localCost"
+                          min="0"
+                          step="1"
+                          type="number"
+                          value="0"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <p class="planner-note">
+                    <i class="bi bi-info-circle"> </i>
+                    Enter current quotes you actually find. This avoids
+                    presenting old guide prices as 2026 rates.
+                  </p>
+                </div>
+                <div class="planner-pane" data-pane="4">
+                  <span class="micro-label"> READY TO GO </span>
+                  <h3>Your Batanes outline.</h3>
+                  <div class="review-route" id="reviewRoute"></div>
+                  <button type="button" class="btn-main dark-btn wide" id="buildTrip">
+                    Save plan &amp; build itinerary
+                    <i class="bi bi-arrow-right"> </i>
+                  </button>
+                </div>
+                <div class="planner-nav">
+                  <button class="btn-back" id="plannerBack" type="button">
+                    <i class="bi bi-arrow-left"> </i>
+                    Back
+                  </button>
+                  <button
+                    class="btn-main dark-btn"
+                    id="plannerNext"
+                    type="button"
+                  >
+                    Continue
+                    <i class="bi bi-arrow-right"> </i>
+                  </button>
+                </div>
+              </form>
+              <aside class="trip-summary">
+                <div class="summary-head">
+                  <span> LIVE TRIP SUMMARY </span>
+                  <b id="summaryDays"> 4 DAYS </b>
+                </div>
+                <div class="journey-visual">
+                  <div class="journey-stop">
+                    <i class="bi bi-geo"> </i>
+                    <span>
+                      <small> FROM </small>
+                      <b id="summaryOrigin"> Metro Manila </b>
+                    </span>
+                  </div>
+                  <i class="journey-line"> </i>
+                  <div class="journey-stop">
+                    <i class="bi bi-airplane"> </i>
+                    <span>
+                      <small> ARRIVE </small>
+                      <b> Basco Airport </b>
+                    </span>
+                  </div>
+                  <i class="journey-line"> </i>
+                  <div class="journey-stop">
+                    <i class="bi bi-compass"> </i>
+                    <span>
+                      <small> FOCUS </small>
+                      <b id="summaryArea"> North Batan </b>
+                    </span>
+                  </div>
+                </div>
+                <div class="budget-card">
+                  <small> WORKING TOTAL </small>
+                  <strong id="budgetTotal"> ₱9,600 </strong>
+                  <div id="budgetBreakdown"></div>
+                </div>
+                <div class="mini-itinerary">
+                  <span> RECOMMENDED FLOW </span>
+                  <div id="itineraryPreview"></div>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </section>
+        <!-- ITINERARY -->
+        <section class="view itinerary-view" data-page="itinerary">
+          <div class="itinerary-shell">
+            <header class="itinerary-header">
+              <div>
+                <nav aria-label="breadcrumb" class="view-breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                      <a data-view="home" href="#">
+                        <i aria-hidden="true" class="glyphicon glyphicon-home">
+                        </i>
+                        Home
+                      </a>
+                    </li>
+                    <li aria-current="page" class="breadcrumb-item active">
+                      My Trip
+                    </li>
+                  </ol>
+                </nav>
+                <span class="chapter dark"> 05 / MY ITINERARY </span>
+                <h2>
+                  A plan with room
+                  <br />
+                  <em> for the weather. </em>
+                </h2>
+              </div>
+              <div class="itinerary-actions">
+                <button type="button" class="btn-main dark-btn" id="addCustom">
+                  <i class="bi bi-plus-circle"> </i>
+                  Custom activity
+                </button>
+                <button type="button" class="btn-outline" id="tripMapToggle">
+                  <i class="bi bi-map"> </i>
+                  Map view
+                </button>
+                <button type="button" class="btn-outline" id="addDay">
+                  <i class="bi bi-plus"> </i>
+                  Add day
+                </button>
+                <button type="button" class="btn-outline danger" id="clearItinerary">
+                  <i class="bi bi-trash3"> </i>
+                  Clear
+                </button>
+              </div>
+            </header>
+            <div aria-label="Trip readiness overview" class="trip-progress" id="tripProgress" role="group"></div>
+            <div class="itinerary-grid">
+              <div class="day-timeline" id="dayTimeline"></div>
+              <aside class="saved-panel">
+                <span class="micro-label"> SAVED FROM DISCOVER </span>
+                <h3>Your shortlist</h3>
+                <div id="savedItems"></div>
+                <p class="empty-hint" id="savedHint">
+                  Save destinations and experiences while exploring. They'll
+                  appear here.
+                </p>
+              </aside>
+            </div>
+          </div>
+        </section>
+        <!-- GALLERY -->
+        <section class="view gallery-view" data-page="gallery">
+          <div class="gallery-scroll">
+            <header class="gallery-header container-xl">
+              <div>
+                <nav aria-label="breadcrumb" class="view-breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                      <a data-view="home" href="#">
+                        <i aria-hidden="true" class="glyphicon glyphicon-home">
+                        </i>
+                        Home
+                      </a>
+                    </li>
+                    <li aria-current="page" class="breadcrumb-item active">
+                      Gallery
+                    </li>
+                  </ol>
+                </nav>
+                <span class="chapter dark"> 06 / GALLERY &amp; CULTURE </span>
+                <h2>
+                  Keep a little
+                  <br />
+                  <em> of the islands. </em>
+                </h2>
+              </div>
+              <p>
+                Landscapes, heritage, food and personal memories in one visual
+                chapter.
+              </p>
+            </header>
+            <section class="culture-feature container-xl">
+              <article class="culture-main">
+                <span> CULTURE NOTE </span>
+                <h3>Ivatan life is more than a backdrop.</h3>
+                <p>
+                  Use this space for respectful context about community
+                  traditions, architecture and everyday island life.
+                </p>
+                <button type="button" class="text-link dark-link" id="cultureMore">
+                  Read cultural notes
+                  <i class="bi bi-arrow-right"> </i>
+                </button>
+              </article>
+              <div class="culture-cards">
+                <article>
+                  <i class="bi bi-cup-hot"> </i>
+                  <span> FOOD </span>
+                  <b> Luñis · Uved · Vunes </b>
+                  <p>Introduce local dishes with context.</p>
+                </article>
+                <article>
+                  <i class="bi bi-house-heart"> </i>
+                  <span> HERITAGE </span>
+                  <b> Stone villages </b>
+                  <p>Architecture shaped by climate and history.</p>
+                </article>
+              </div>
+            </section>
+            <section class="gallery-section container-xl">
+              <div class="gallery-title">
+                <div>
+                  <span class="micro-label"> PHOTO JOURNAL </span>
+                  <h3>Scenes from Batanes</h3>
+                </div>
+                <div
+                  aria-label="Gallery filters"
+                  class="gallery-filter btn-group"
+                  role="group"
+                >
+                  <button
+                    aria-pressed="true"
+                    class="btn active"
+                    data-filter="all"
+                    type="button"
+                  >
+                    All
+                  </button>
+                  <button
+                    aria-pressed="false"
+                    class="btn"
+                    data-filter="landscape"
+                    type="button"
+                  >
+                    Landscape
+                  </button>
+                  <button
+                    aria-pressed="false"
+                    class="btn"
+                    data-filter="culture"
+                    type="button"
+                  >
+                    Culture
+                  </button>
+                  <button
+                    aria-pressed="false"
+                    class="btn"
+                    data-filter="coast"
+                    type="button"
+                  >
+                    Coast
+                  </button>
+                </div>
+              </div>
+              <div class="gallery-mosaic" id="galleryMosaic"></div>
+            </section>
+            <section class="memories-section">
+              <div class="container-xl">
+                <div class="memory-head">
+                  <div>
+                    <span class="micro-label"> MY BATANES STORY </span>
+                    <h3>
+                      Turn moments into
+                      <br />
+                      <em> a travel journal. </em>
+                    </h3>
+                    <p>
+                      Pair your photos with the places, days and little details
+                      you want to remember. Your story stays private to this
+                      browser.
+                    </p>
+                  </div>
+                  <div class="d-flex flex-wrap gap-2">
+                    <label class="upload-btn story-upload">
+                      <i aria-hidden="true" class="glyphicon glyphicon-camera">
+                      </i>
+                      Create a memory
+                      <input
+                        accept="image/*"
+                        hidden=""
+                        id="memoryUpload"
+                        multiple=""
+                        type="file"
+                      />
+                    </label>
+                    <button type="button" class="btn-outline" id="openCollage">
+                      <i class="bi bi-grid-3x3-gap"> </i>
+                      Create collage
+                    </button>
+                  </div>
+                </div>
+                <div class="memory-inspiration">
+                  <div>
+                    <i class="bi bi-journal-heart"> </i>
+                    <b> Not just an upload. </b>
+                    <span>
+                      Build a visual diary connected to your itinerary.
+                    </span>
+                  </div>
+                  <div>
+                    <i class="bi bi-shield-check"> </i>
+                    <b> Private by default. </b>
+                    <span> Memories stay on this device. </span>
+                  </div>
+                </div>
+                <div class="memory-grid story-grid" id="memoryGrid"></div>
+              </div>
+            </section>
+          </div>
+        </section>
+      </main>
+      <div
+        aria-hidden="true"
+        class="mobile-menu"
+        data-header-theme="dark"
+        id="mobileMenu"
+      >
+        <div class="mobile-menu-head">
+          <span> BATANES </span>
+          <button type="button" id="menuClose">
+            <i class="bi bi-x-lg"> </i>
+          </button>
         </div>
-       </div>
+        <nav></nav>
+        <small> WHERE THE WIND LEADS </small>
       </div>
-     </div>
+      <div class="page-transition" id="pageTransition">
+        <div></div>
+      </div>
+      <div aria-hidden="true" class="detail-modal" id="detailModal">
+        <div class="detail-card">
+          <button type="button" aria-label="Close" class="modal-close" id="detailClose">
+            <i class="bi bi-x-lg"> </i>
+          </button>
+          <div class="detail-media" id="detailMedia"></div>
+          <div class="detail-copy">
+            <span id="detailArea"> </span>
+            <h3 id="detailTitle"></h3>
+            <p id="detailText"></p>
+            <div class="tag-row" id="detailTags"></div>
+            <button type="button" class="btn-main dark-btn" id="detailSave">
+              <i class="bi bi-plus-lg"> </i>
+              Add to itinerary
+            </button>
+          </div>
+        </div>
+      </div>
+      <div aria-hidden="true" class="schedule-modal" id="scheduleModal">
+        <div class="schedule-card">
+          <button type="button" aria-label="Close" class="modal-close" id="scheduleClose">
+            <i class="bi bi-x-lg"> </i>
+          </button>
+          <span class="micro-label"> ADD TO MY TRIP </span>
+          <h3 id="scheduleTitle">Schedule this stop</h3>
+          <p class="schedule-sub" id="scheduleSub"></p>
+          <div class="row g-3">
+            <div class="col-12" id="scheduleNameWrap">
+              <label class="form-label" for="scheduleName"> Activity / place name </label>
+              <input
+                class="form-control form-control-lg"
+                id="scheduleName"
+                placeholder="e.g. Breakfast in Basco"
+                type="text"
+              />
+            </div>
+            <div class="col-6">
+              <label for="scheduleDay"> Day </label>
+              <select class="form-select" id="scheduleDay"></select>
+            </div>
+            <div class="col-6">
+              <label for="scheduleStart"> Start time </label>
+              <input
+                class="form-control"
+                id="scheduleStart"
+                type="time"
+                value="09:00"
+              />
+            </div>
+            <div class="col-6">
+              <label for="scheduleEnd"> End time </label>
+              <input
+                class="form-control"
+                id="scheduleEnd"
+                type="time"
+                value="10:30"
+              />
+            </div>
+            <div class="col-6">
+              <label for="scheduleCost"> Estimated cost </label>
+              <div class="input-group">
+                <span class="input-group-text"> ₱ </span>
+                <input
+                  class="form-control"
+                  id="scheduleCost"
+                  min="0"
+                  step="1"
+                  type="number"
+                  value="0"
+                />
+              </div>
+            </div>
+            <div class="col-12">
+              <label for="scheduleNotes"> Notes </label>
+              <textarea
+                class="form-control"
+                id="scheduleNotes"
+                placeholder="Sunrise visit, bring a jacket, lunch after..."
+                rows="3"
+              ></textarea>
+            </div>
+          </div>
+          <div class="overlap-warning" id="overlapWarning"></div>
+          <button type="button" class="btn-main dark-btn wide" id="scheduleSave">
+            Add to itinerary
+            <i class="bi bi-arrow-right"> </i>
+          </button>
+        </div>
+      </div>
+      <div class="trip-map-modal" id="tripMapModal">
+        <div class="trip-map-card">
+          <button type="button" aria-label="Close" class="modal-close" id="tripMapClose">
+            <i class="bi bi-x-lg"> </i>
+          </button>
+          <div class="trip-map-head">
+            <span class="micro-label"> MY TRIP / MAP VIEW </span>
+            <h3>Your scheduled Batanes stops</h3>
+          </div>
+          <div id="tripMap"></div>
+        </div>
+      </div>
+      <div class="memory-modal" id="memoryModal">
+        <div class="memory-editor">
+          <button type="button" aria-label="Close" class="modal-close" id="memoryClose">
+            <i class="bi bi-x-lg"> </i>
+          </button>
+          <span class="micro-label"> CREATE A MEMORY </span>
+          <h3>What do you want to remember?</h3>
+          <img alt="Memory preview" id="memoryPreview" />
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="memoryPlace"> Where was this? </label>
+              <input
+                class="form-control"
+                id="memoryPlace"
+                placeholder="e.g. Vayang Rolling Hills"
+              />
+            </div>
+            <div class="col-md-6">
+              <label for="memoryDay"> Day </label>
+              <select class="form-select" id="memoryDay"></select>
+            </div>
+            <div class="col-12">
+              <label for="memoryNote"> Your memory </label>
+              <textarea
+                class="form-control"
+                id="memoryNote"
+                placeholder="The wind was so strong here..."
+                rows="3"
+              ></textarea>
+            </div>
+          </div>
+          <button type="button" class="btn-main dark-btn wide" id="memorySave">
+            Save to my story
+            <i class="bi bi-heart"> </i>
+          </button>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        aria-labelledby="guideDetailTitle"
+        class="modal fade"
+        id="guideDetailModal"
+        tabindex="-1"
+      >
+        <div
+          class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable"
+        >
+          <div class="modal-content guide-detail-modal-content border-0">
+            <button
+              aria-label="Close"
+              class="btn-close guide-bootstrap-close"
+              data-bs-dismiss="modal"
+              type="button"
+            ></button>
+            <div class="modal-body p-0" id="guideDetailBody"></div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        aria-labelledby="collageTitle"
+        class="modal fade"
+        id="collageModal"
+        tabindex="-1"
+      >
+        <div
+          class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable"
+        >
+          <div class="modal-content collage-modal-content border-0">
+            <div class="modal-header border-0 px-4 px-lg-5 pt-4">
+              <div>
+                <span class="micro-label"> MY BATANES STORY </span>
+                <h3 class="modal-title" id="collageTitle">
+                  Create a memory collage
+                </h3>
+              </div>
+              <button
+                aria-label="Close"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                type="button"
+              ></button>
+            </div>
+            <div class="modal-body px-4 px-lg-5 pb-5">
+              <div class="row g-4 g-xl-5">
+                <div class="col-lg-4">
+                  <div class="collage-controls card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                      <label class="form-label" for="collageHeading"> Collage title </label>
+                      <input
+                        class="form-control"
+                        id="collageHeading"
+                        value="BATANES MEMORIES"
+                      />
+                      <label class="form-label mt-3" for="collageSubtitle"> Subtitle </label>
+                      <input
+                        class="form-control"
+                        id="collageSubtitle"
+                        value="Where the wind led us."
+                      />
+                      <label class="form-label mt-3" for="collageLayout"> Layout </label>
+                      <select class="form-select" id="collageLayout">
+                        <option value="grid">Editorial Grid</option>
+                        <option value="postcard">Postcard</option>
+                        <option value="film">Film Strip</option>
+                      </select>
+                      <label class="form-label mt-3" for="collageFormat"> Format </label>
+                      <select class="form-select" id="collageFormat">
+                        <option value="post">Post · 4:5</option>
+                        <option value="story">Story · 9:16</option>
+                        <option value="landscape">Landscape · 16:9</option>
+                      </select>
+                      <div class="mt-4">
+                        <small class="micro-label"> SELECT 2–6 MEMORIES </small>
+                        <div
+                          class="collage-picker mt-2"
+                          id="collagePicker"
+                        ></div>
+                      </div>
+                      <button type="button"
+                        class="btn-main dark-btn wide mt-4"
+                        id="downloadCollage"
+                      >
+                        <i class="bi bi-download"> </i>
+                        Save collage as PNG
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-8">
+                  <div class="collage-preview-wrap">
+                    <canvas height="1350" id="collageCanvas" width="1080">
+                    </canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div aria-atomic="true" aria-live="polite" class="toast-note" id="toastNote" role="status">
+        <i aria-hidden="true" class="bi bi-check2"> </i>
+        <span> Saved </span>
+      </div>
+      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="script.js"></script>
     </div>
-    <div class="toast-note" id="toastNote">
-     <i class="bi bi-check2">
-     </i>
-     <span>
-      Saved
-     </span>
-    </div>
-   </div>
-   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
-   </script>
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
-   </script>
-   <script src="script.js">
-   </script>
-  </div>
- </body>
+  </body>
 </html>
