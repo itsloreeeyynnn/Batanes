@@ -825,7 +825,7 @@ h2 em {
 .place-strip {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 12px;
 }
 
 .place-card {
@@ -1100,9 +1100,16 @@ h2 em {
 
 .experience-actions {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 10px;
   margin-top: 20px;
+}
+
+.experience-actions .btn-main {
+  flex: 0 0 auto;
+  padding: 14px 8px;
+  gap: 8px;
 }
 
 .round-action {
@@ -1177,7 +1184,7 @@ h2 em {
   font-family: "Playfair Display";
   font-size: clamp(20px, 2vw, 30px);
   line-height: 1.45;
-  color: #31595b;
+  color: var(--ink);
 }
 
 .guide-lead .text-link {
@@ -1284,6 +1291,8 @@ h2 em {
 
 .table {
   --bs-table-bg: transparent;
+  --bs-table-color: var(--ink);
+  --bs-table-border-color: var(--line);
   --bs-table-striped-bg: rgba(146, 196, 198, 0.1);
   margin: 0;
 }
@@ -1298,6 +1307,7 @@ h2 em {
 .table td {
   font-size: 12px;
   padding: 18px 16px;
+  color: var(--ink);
 }
 
 .table td b,
@@ -1685,7 +1695,7 @@ h2 em {
   display: flex;
   justify-content: space-between;
   font-size: 9px;
-  color: #557171;
+  color: var(--cyan-deep);
 }
 
 .mini-itinerary {
@@ -1855,14 +1865,14 @@ h2 em {
   font-family: "Playfair Display";
   font-size: 24px;
   line-height: 1.45;
-  color: #527072;
+  color: var(--ink);
 }
 
 .culture-feature {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: 12px;
-  padding-bottom: 9vh;
+  padding-bottom: 10vh;
 }
 
 .culture-main {
@@ -2051,7 +2061,7 @@ h2 em {
 
 .memories-section {
   background: var(--champagne);
-  padding: 9vh 0 12vh;
+  padding: 0 0 12vh;
 }
 
 .memory-head {
@@ -2873,7 +2883,7 @@ h2 em {
 }
 
 .home-islands {
-  padding: 10vh 3vw 12vh;
+  padding: 11vh 3vw;
 }
 
 .section-heading {
@@ -2972,7 +2982,7 @@ h2 em {
 
 .home-place-rail {
   display: flex;
-  gap: 14px;
+  gap: 12px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   padding-bottom: 10px;
@@ -3749,6 +3759,11 @@ h2 em {
     padding-bottom: 90px;
   }
 
+  .home-islands {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+
   .home-editorial-photo img {
     height: 520px;
   }
@@ -4314,14 +4329,14 @@ body {
   font-size: 10px !important;
   font-weight: 700;
   letter-spacing: 0.14em;
-  color: #6c8d8d;
+  color: color-mix(in srgb, var(--cyan-dark) 75%, transparent);
 }
 .zone-tab b {
   font-family: "Manrope", sans-serif;
   font-size: 14px !important;
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: #587474;
+  color: color-mix(in srgb, var(--cyan-dark) 85%, transparent);
   white-space: nowrap;
 }
 .zone-tab i {
@@ -5632,4 +5647,85 @@ body {
   .day-content .w3-day-badge {
     font-size: 10px;
   }
+}
+
+/* ===== Week 4 Phase 3 ===== */
+
+/* W4-M1: hero-card text fit. At <=1050px the deck is a 4-column grid with
+   ~83px columns; the longest word ("Batanes" = 58px at 15px) plus 18px
+   padding overflowed the card and was cut by overflow:hidden. Tighten
+   padding/type only at these widths - desktop (>=1051px) is untouched. */
+@media (max-width: 1050px) {
+  .hero-card {
+    padding: 10px;
+  }
+
+  .hero-card b {
+    font-size: 14px;
+  }
+
+  .hero-card small {
+    font-size: 8px;
+    letter-spacing: 0.02em;
+  }
+}
+
+/* W4-M1: at <=767px the deck is a horizontal scroll strip (see the
+   overflow-x:auto block above). The later `.hero-card { min-width: 0 }`
+   defeated the strip's min-width floor, so cards shrank below their longest
+   word. Restore a floor that fits the longest word with the tighter tablet
+   padding above (120px - 20px padding - 2px border = 98px content). */
+@media (max-width: 767px) {
+  .hero-card {
+    min-width: 120px;
+  }
+}
+
+/* W4-L1: touch targets >= 24px. min-height/padding raise the box metric;
+   ::after overlays add invisible hit-area margin on top (padding-only would
+   shift the underline/baseline, overlays keep the visuals pixel-identical). */
+.home-place-rail button {
+  position: relative;
+  min-height: 24px;
+}
+
+.home-place-rail button::after {
+  content: "";
+  position: absolute;
+  inset: -5px -4px;
+}
+
+.text-link {
+  position: relative;
+  min-height: 24px;
+}
+
+.text-link::after {
+  content: "";
+  position: absolute;
+  inset: -6px -4px;
+}
+
+.view-breadcrumb .breadcrumb-item a {
+  position: relative;
+  padding: 5px 0;
+}
+
+.view-breadcrumb .breadcrumb-item a::after {
+  content: "";
+  position: absolute;
+  inset: -5px -3px;
+}
+
+.leaflet-control-attribution a {
+  position: relative;
+  display: inline-block;
+  padding: 4px 3px;
+  margin: -4px -3px;
+}
+
+.leaflet-control-attribution a::after {
+  content: "";
+  position: absolute;
+  inset: -8px -4px;
 }

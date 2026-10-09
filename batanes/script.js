@@ -1205,6 +1205,7 @@ function renderItinerary() {
   renderPlanningTable();
   renderTripProgress();
 }
+
 function renderPlanningTable() {
   const body = $("#planningTableBody");
   if (!body) return;
@@ -1222,9 +1223,11 @@ function renderPlanningTable() {
     )
     .join("");
 }
+
 function updateSavedCount() {
   $("#savedCount").textContent = schedule.length;
 }
+
 function renderGallery(filter = "all") {
   state.galleryFilter = filter || "all";
   $$(".gallery-filter button").forEach((b) => {
@@ -1245,6 +1248,7 @@ function renderGallery(filter = "all") {
     : `<p class="gallery-empty-hint">No photos in this category yet. Switch filters to keep exploring the gallery.</p>`;
   renderBreadcrumb("gallery");
 }
+
 function renderMemories() {
   const grid = $("#memoryGrid");
   if (!memories.length) {
